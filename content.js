@@ -4,9 +4,10 @@ function rm_imp(){
   var activities = document.getElementsByClassName('css-1dbjc4n r-1ta3fxp r-18u37iz r-1wtj0ep r-1s2bzr4 r-1mdbhws');
   for (let i=0;i<activities.length;i++){
     var imp = activities[i]['childNodes'][0]
-
-    while (imp.firstChild) {
-      imp.removeChild(imp.firstChild);
+    if (imp.firstElementChild.firstElementChild.childElementCount == 2){
+      var imp_num = imp.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild
+      //console.log(imp_num)
+      imp_num.textContent = '😊'
     }
   }
 }
